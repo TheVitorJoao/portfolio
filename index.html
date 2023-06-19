@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./fontawesome-free-6.4.0-web/css/all.min.css">
+</head>
+
+<body>
+
+    <main>
+
+        <section class="effect">
+
+            <div class="cabecao">
+
+                <h1 class="meuNome saida"> </h1>
+                <h3 class="ocupacao animacao"> Front-End Developer </h3>
+                <h3 class="animacao"> WhatsApp: (21) 99344- 0660 </h3>
+                <h3 class="animacao"> E-mail: joaoraquel1998@gmail.com</h3>
+
+                <div class="icones">
+
+                    <a href="https://www.linkedin.com/in/joao-vitor-meulink/" target="_blank">
+                        <i class="fa-brands fa-linkedin iconeimg" style="color: #1d4ea3;">    </i>
+                    </a>
+
+                    <a  href="https://github.com/TheVitorJoao " target="_blank">
+                        <i class="fa-brands fa-github iconeimg" style="color: #000000;">      </i>
+                    </a>
+
+                </div>
+
+
+                <div class="divSobre">
+
+                    <h1 class="sobreMim animacao"> Sobre Mim </h1>
+                    <h4 class="paragrafoSobreMim"> Desde de muito novo eu já era facinado por como eram feitas todas
+                        aquelas aplicações que eu
+                        consumia como o orkut, porém só conheci o universo da programação á pouco tempo. Ingressei na
+                        carreira de tecnologia e ainda estou cursando Análise e Desenvolvimento de
+                        Sistemas. Porém, compenso minha falta de experiência com uma boa capacidade de aprendizagem,
+                        muita
+                        curiosidade para aprender novas tarefas e formas diferentes de solucionar problemas e tenho boas
+                        habilidades sociais. Acredito que além de conhecimento técnico, um bom profissional possui boas
+                        habilidades sociais como conseguir se expressar claramente e conseguir ajustar seu comportamento
+                        de acordo com o meio que está.
+                    </h4>
+
+                </div>
+
+                <div>
+
+                    <h1 class="Tecnologias animacao">Tecnologias em Desenvolvimento</h1>
+
+                    <div class="divImagem">
+
+                        <img class="imagem" src="./imagens/logo-html-5-256.png" alt="Logo Html">
+                        <img class="imagem" src="./imagens/logo-css-3-256.png" alt="Logo CSS">
+                        <img class="imagem" src="./imagens/logo-javascript-icon-256.png" alt="Logo JavaScript">
+
+                    </div>
+
+                </div>
+
+                <div class="divformacao">
+
+                    <h1 class="formacao animacao"> Formação </h1>
+                    <h4 class="instituicao"> Instituição: Estácio de Sá <br>
+                        Curso: Análise e Desenvolvimento de Sistemas<br>
+                        previsão de término 06/2024
+                    </h4>
+
+                </div>
+
+                <div class="divCurso">
+
+                    <h1 class="animacao">Curso Extra</h1>
+                    <h4 class="curso"> Instituição: Instituto da Oportunidade Social <br>
+                        Microsoft Office (Word, Power Point e Excel) - Intermediário
+                    </h4>
+
+                </div>
+
+                <div class="divProjetos">
+
+                    <h1 class="projetos animacao">Projetos</h1>
+
+                    <div class="divImagensProjeto">
+                        <a href="https://projeto-mac1.web.app/" target="_blank"> <img class="imagemProjeto"
+                                src="./imagens/projeto-login.png" alt="Projeto EBAC">
+                        </a>
+                        <h4 class="paragrafoProjeto"> Projeto desenvolvido com HTML, CSS e JavaScrip em um evento
+                            promovido pela EBAC,
+                            se trata de uma página de login que para "logar" deverá inserir: admin nos dois campos.
+                            Clique e veja seu funcionamento 8)
+                        </h4>
+                    </div>
+
+
+                    <div class="divImagensProjeto">
+
+                        <a href="https://singular-mooncake-ab8cd3.netlify.app/ " target="_blank"> <img
+                                class="imagemProjeto" src="./imagens/pokedex.jpeg" alt="Pokedex">
+                        </a>
+                        <h4 class="paragrafoProjeto"> Projeto desenvolvido com HTML e CSS na semana Dev em Dobro,
+                            porém adicionei algumas
+                            funcionalidades
+                            que achei úteis para o site e adicionei alguns estilos do jeito que também achei mais
+                            interessante para dar
+                            um toque de originalidade. Clique e veja seu funcionamento 8) </h4>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script>
+        const saida = document.querySelector(".saida");
+
+        function digitacao(texto, contador) {
+
+            if (contador < texto.length) {
+                setTimeout(() => {
+                    saida.textContent += texto.charAt(contador); contador++;
+                    digitacao(texto, contador);
+                }, 100)
+
+            }
+        }
+
+        digitacao("Olá , me chamo João Vitor Raquel", 0);
+
+        const card = document.querySelector ('.cabecao') ;
+
+card.addEventListener("mousemove", cardEffect); 
+card.addEventListener("mouseleave", cardback );
+
+function cardEffect(event) 
+{ 
+    const cardWidth = card.offsetWidth;
+    const cardHeight = card.offsetHeight; 
+    const centerX = card.offsetLeft + cardWidth/2;
+    const centerY = card.offsetTop + cardHeight/2;
+    const positionX = event.clientX - centerX;
+    const positionY = event.clientY - centerY;
+    
+    const rotateX = ((+1)*25*positionY/(cardHeight/2)).toFixed(2);
+        const rotateY = ((-1)*25*positionX/(cardWidth/2)).toFixed(2);
+
+    card.style.transform = `perspective(2000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`; 
+}
+
+function cardback(event)
+{ 
+    card.style.transform = `perspective(2000px) rotateX(0deg) rotateY(0deg)`; 
+
+}
+
+
+
+    </script>
+
+</body>
+
+
+
+</html>
